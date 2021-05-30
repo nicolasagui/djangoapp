@@ -3,13 +3,14 @@
 <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
 
 <h1>Polls app</h1>
+<h3><i>Editada por Carlos Ortiz Kendall</i></h2>
 
 {% if latest_question_list %}
-    <ul>
+    <ol>
     {% for question in latest_question_list %}
         <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
     {% endfor %}
-    </ul>
+    </ol>
 {% else %}
     <p>No polls are available.</p>
 {% endif %}
